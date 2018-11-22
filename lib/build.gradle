@@ -1,0 +1,18 @@
+buildscript {
+    repositories {
+        maven { url "http://repo.spring.io/libs-release" }
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$project.ext.springBootVersion")
+    }
+}
+
+description = 'lib'
+
+
+dependencies {
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:$project.ext.springBootVersion")
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
