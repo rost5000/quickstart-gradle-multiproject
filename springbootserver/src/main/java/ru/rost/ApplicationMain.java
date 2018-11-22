@@ -2,6 +2,7 @@ package ru.rost;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import ru.rost.config.SpringApplicationContextInitializer;
 import ru.rost.model.TestModel;
 
 /**
@@ -12,6 +13,7 @@ public class ApplicationMain {
     public static void main(String ... args){
         new TestModel();
         new SpringApplicationBuilder(ApplicationMain.class)
+                .initializers(new SpringApplicationContextInitializer())
                 .run(args);
     }
 }
